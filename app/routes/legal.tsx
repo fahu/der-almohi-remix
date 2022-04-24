@@ -5,9 +5,8 @@ export default function Index() {
     return (
         <main className="container mx-auto relative min-h-screen bg-white flex flex-col justify-center p-6">
             <HeroComponent></HeroComponent>
-            <div className="-mt-12 mx-12 mb-32 p-12 lg:mx-auto bg-gray-100 rounded-xl">
-                <article className="prose">
-
+            <div className="mb-32 mt-6 lg:-mt-12 lg:mx-auto p-6 lg:p-12 bg-gray-100 rounded-xl">
+                <article className="prose prose-sm">
                     <h1 className="text-center">Imprint</h1>
                     <div className="">
                         <h2 className="is-size-3">Angaben gemäß § 5 TMG:</h2>
