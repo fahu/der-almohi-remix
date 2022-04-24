@@ -16,7 +16,10 @@ import {
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
+  return [
+      { rel: "stylesheet", href: tailwindStylesheetUrl },
+      { rel: "preconnect", href: "https://res.cloudinary.com" },
+  ];
 };
 
 export const meta: MetaFunction = () => ({
