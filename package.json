@@ -1,7 +1,7 @@
 {
-  "name": "der-almohi-remix-148c",
-  "private": true,
-  "description": "",
+  "name": "der-almohi-remix",
+  "version": "1.0.0",
+  "description": "A hiking photography blog created with Remix, Tailwind, Cloudinary and Vercel.",
   "license": "",
   "sideEffects": false,
   "scripts": {
