@@ -1,4 +1,8 @@
-import {CloudinaryImageDensity, CloudinaryImageFormat, CloudinaryImageService} from "~/services/CloudinaryImageService";
+import {
+    CloudinaryImageDensity,
+    CloudinaryImageFormat,
+    CloudinaryImageRequestHelper
+} from "~/helper/CloudinaryImageRequestHelper";
 
 type ActivityTeaserComponentProps = {
     title: string
@@ -8,14 +12,14 @@ type ActivityTeaserComponentProps = {
 
 export const ActivityTeaserComponent = ({title, cloudinaryImageName, altText}: ActivityTeaserComponentProps) => {
     const webpSrcSet = `
-        ${CloudinaryImageService.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.WEBP, CloudinaryImageDensity.SINGLE, undefined, 256)} 1x,
-        ${CloudinaryImageService.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.WEBP, CloudinaryImageDensity.DOUBLE, undefined, 256)} 2x,
-        ${CloudinaryImageService.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.WEBP, CloudinaryImageDensity.TRIPLE, undefined, 256)} 3x`;
+        ${CloudinaryImageRequestHelper.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.WEBP, CloudinaryImageDensity.SINGLE, undefined, 256)} 1x,
+        ${CloudinaryImageRequestHelper.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.WEBP, CloudinaryImageDensity.DOUBLE, undefined, 256)} 2x,
+        ${CloudinaryImageRequestHelper.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.WEBP, CloudinaryImageDensity.TRIPLE, undefined, 256)} 3x`;
 
     const jpgSrcSet = `
-        ${CloudinaryImageService.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.SINGLE, undefined, 256)} 1x,
-        ${CloudinaryImageService.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.DOUBLE, undefined, 256)} 2x,
-        ${CloudinaryImageService.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.TRIPLE, undefined, 256)} 3x`;
+        ${CloudinaryImageRequestHelper.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.SINGLE, undefined, 256)} 1x,
+        ${CloudinaryImageRequestHelper.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.DOUBLE, undefined, 256)} 2x,
+        ${CloudinaryImageRequestHelper.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.TRIPLE, undefined, 256)} 3x`;
 
     return (
         <header
@@ -25,7 +29,7 @@ export const ActivityTeaserComponent = ({title, cloudinaryImageName, altText}: A
                     <source type="image/webp" srcSet={webpSrcSet}></source>
                     <source type="image/jpg" srcSet={jpgSrcSet}></source>
                     <img className="h-64 m-0 top-0 rounded-xl w-auto object-cover"
-                         src={CloudinaryImageService.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.SINGLE, undefined, 256)}
+                         src={CloudinaryImageRequestHelper.getImageUrl(cloudinaryImageName, CloudinaryImageFormat.JPG, CloudinaryImageDensity.SINGLE, undefined, 256)}
                          srcSet={jpgSrcSet}
                          alt={altText}
                          loading="lazy"
