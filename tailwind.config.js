@@ -2,14 +2,11 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
     extend: {
-      backgroundImage: {
-      },
+      backgroundImage: {},
       height: {
-        '128': '32rem',
-      }
+        128: "32rem",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

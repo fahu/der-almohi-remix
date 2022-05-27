@@ -17,9 +17,13 @@ import tailwindStylesheetUrl from "./styles/tailwind.css";
 
 export const links: LinksFunction = () => {
   return [
-      { rel: "stylesheet", href: tailwindStylesheetUrl },
-      { rel: "preconnect", href: "https://res.cloudinary.com" },
-      { rel: "preload", as: "image", href: "https://res.cloudinary.com/dbsjhw9tp/image/upload/c_scale,w_1488/v1650748932/der-almohi-hero-schneiderberg-gruenau-2021_i1s7vp.jpg" }
+    { rel: "stylesheet", href: tailwindStylesheetUrl },
+    { rel: "preconnect", href: "https://res.cloudinary.com" },
+    {
+      rel: "preload",
+      as: "image",
+      href: "https://res.cloudinary.com/dbsjhw9tp/image/upload/c_scale,w_1488/v1650748932/der-almohi-hero-schneiderberg-gruenau-2021_i1s7vp.jpg",
+    },
   ];
 };
 
@@ -32,8 +36,7 @@ export const meta: MetaFunction = () => ({
 type LoaderData = {};
 
 export const loader: LoaderFunction = async ({ request }) => {
-  return json<LoaderData>({
-  });
+  return json<LoaderData>({});
 };
 
 export default function App() {
