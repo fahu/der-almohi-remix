@@ -8,8 +8,21 @@ export default function Index() {
       <div className="mb-32 mt-6 rounded-xl bg-gray-100 p-6 lg:mx-auto lg:-mt-12 lg:p-12">
         <article className="prose prose-sm">
           <h1 className="text-center">Imprint</h1>
+          <h2 className="is-size-2">Credits</h2>
+          <ul>
+            <li>
+              <span>The header image vector graphic was created by </span>
+              <a href="https://de.freepik.com/vektoren/hintergrund" target="_blank" rel="noreferrer">
+                pikisuperstar - de.freepik.com
+              </a>
+            </li>
+            <li>
+              <span>All other images are copyright by </span>
+              <a href="https://fahu.at" target="_blank" rel="noreferrer">Fabian Hurnaus</a>
+            </li>
+          </ul>
           <div className="">
-            <h2 className="is-size-3">Angaben gemäß § 5 TMG:</h2>
+            <h2 className="is-size-2">Angaben gemäß § 5 TMG:</h2>
             <p>
               Fabian Hurnaus
               <br /> Diendorf 2<br /> 4153 Peilstein im Mühlviertel
