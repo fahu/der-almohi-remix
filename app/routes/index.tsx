@@ -10,6 +10,7 @@ interface ActivityData {
   2020: CloudinaryImage[];
   2021: CloudinaryImage[];
   2022: CloudinaryImage[];
+  2023: CloudinaryImage[];
 }
 
 export const loader: LoaderFunction = async (): Promise<ActivityData> => {
@@ -24,6 +25,9 @@ export const loader: LoaderFunction = async (): Promise<ActivityData> => {
     ),
     2022: await cloudinaryImageSearchService.searchForImagesInFolder(
       "der-almohi/2022"
+    ),
+    2023: await cloudinaryImageSearchService.searchForImagesInFolder(
+      "der-almohi/2023"
     ),
   };
 };
@@ -59,6 +63,24 @@ export default function Index() {
           </a>
         </div>
       </section>
+
+      {activityData["2023"].length > 0 && (
+        <section className="mt-12">
+          <div className="prose prose-lg">
+            <h2 className="">Activities in 2023</h2>
+          </div>
+          <div className="-mx-2 mt-6 flex flex-wrap">
+            {activityData["2023"].map((image) => (
+              <ActivityTeaserComponent
+                key={image.asset_id}
+                title={image.context?.caption ?? ""}
+                cloudinaryImageName={image.public_id}
+                altText={image.context?.alt ?? ""}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       {activityData["2022"].length > 0 && (
         <section className="mt-12">
