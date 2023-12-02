@@ -22,7 +22,7 @@ export const links: LinksFunction = () => {
     {
       rel: "preload",
       as: "image",
-      href: "https://res.cloudinary.com/dbsjhw9tp/image/upload/c_scale,w_1488/v1650748932/der-almohi/der-almohi-hero-schneiderberg-gruenau-2021_i1s7vp.jpg",
+      href: "https://res.cloudinary.com/dbsjhw9tp/image/upload/f_auto/v1653757476/der-almohi/der-almohi-hero-illustration.ai",
     },
   ];
 };
