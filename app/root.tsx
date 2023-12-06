@@ -31,6 +31,7 @@ export const links: LinksFunction = () => {
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Der Almöhi - Hikes and nice landscapes for everyone 🏔",
+  description: "nature, mountains & öffis 🚞 hikes and nice landscapes for everyone 🏔 anreise mit den #öffis 🚊 #klimaticket ♥️",
   viewport: "width=device-width,initial-scale=1",
 });
 
