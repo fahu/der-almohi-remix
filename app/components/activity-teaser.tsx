@@ -64,9 +64,6 @@ export const ActivityTeaserComponent = ({
   return (
     <header className="h-96 flex-none basis-full rounded-xl px-2 sm:basis-1/2 lg:basis-1/3 2xl:basis-1/4">
       <div className="flex flex-col">
-        <picture>
-          <source type="image/webp" srcSet={webpSrcSet}></source>
-          <source type="image/jpg" srcSet={jpgSrcSet}></source>
           <img
             className="top-0 m-0 h-64 w-auto rounded-xl object-cover"
             src={CloudinaryImageRequestHelper.getImageUrl(
@@ -81,8 +78,6 @@ export const ActivityTeaserComponent = ({
             loading="lazy"
             height="256"
           />
-        </picture>
-
         <div className="prose mt-4">
           <h3 className="text-2xl">{title}</h3>
         </div>
