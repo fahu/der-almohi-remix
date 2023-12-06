@@ -15,56 +15,80 @@ export const ActivityTeaserComponent = ({
   cloudinaryImageName,
   altText,
 }: ActivityTeaserComponentProps) => {
+  const avifSrcSet = `
+        ${CloudinaryImageRequestHelper.getImageUrl(
+    cloudinaryImageName,
+    CloudinaryImageFormat.AVIF,
+    CloudinaryImageDensity.SINGLE,
+    undefined,
+    256
+  )} 1x,
+          ${CloudinaryImageRequestHelper.getImageUrl(
+    cloudinaryImageName,
+    CloudinaryImageFormat.WEBP,
+    CloudinaryImageDensity.DOUBLE,
+    undefined,
+    256
+  )} 2x,
+        ${CloudinaryImageRequestHelper.getImageUrl(
+    cloudinaryImageName,
+    CloudinaryImageFormat.WEBP,
+    CloudinaryImageDensity.TRIPLE,
+    undefined,
+    256
+  )} 3x`;
+
   const webpSrcSet = `
         ${CloudinaryImageRequestHelper.getImageUrl(
-          cloudinaryImageName,
-          CloudinaryImageFormat.WEBP,
-          CloudinaryImageDensity.SINGLE,
-          undefined,
-          256
-        )} 1x,
+    cloudinaryImageName,
+    CloudinaryImageFormat.WEBP,
+    CloudinaryImageDensity.SINGLE,
+    undefined,
+    256
+  )} 1x,
         ${CloudinaryImageRequestHelper.getImageUrl(
-          cloudinaryImageName,
-          CloudinaryImageFormat.WEBP,
-          CloudinaryImageDensity.DOUBLE,
-          undefined,
-          256
-        )} 2x,
+    cloudinaryImageName,
+    CloudinaryImageFormat.WEBP,
+    CloudinaryImageDensity.DOUBLE,
+    undefined,
+    256
+  )} 2x,
         ${CloudinaryImageRequestHelper.getImageUrl(
-          cloudinaryImageName,
-          CloudinaryImageFormat.WEBP,
-          CloudinaryImageDensity.TRIPLE,
-          undefined,
-          256
-        )} 3x`;
+    cloudinaryImageName,
+    CloudinaryImageFormat.WEBP,
+    CloudinaryImageDensity.TRIPLE,
+    undefined,
+    256
+  )} 3x`;
 
   const jpgSrcSet = `
         ${CloudinaryImageRequestHelper.getImageUrl(
-          cloudinaryImageName,
-          CloudinaryImageFormat.JPG,
-          CloudinaryImageDensity.SINGLE,
-          undefined,
-          256
-        )} 1x,
+    cloudinaryImageName,
+    CloudinaryImageFormat.JPG,
+    CloudinaryImageDensity.SINGLE,
+    undefined,
+    256
+  )} 1x,
         ${CloudinaryImageRequestHelper.getImageUrl(
-          cloudinaryImageName,
-          CloudinaryImageFormat.JPG,
-          CloudinaryImageDensity.DOUBLE,
-          undefined,
-          256
-        )} 2x,
+    cloudinaryImageName,
+    CloudinaryImageFormat.JPG,
+    CloudinaryImageDensity.DOUBLE,
+    undefined,
+    256
+  )} 2x,
         ${CloudinaryImageRequestHelper.getImageUrl(
-          cloudinaryImageName,
-          CloudinaryImageFormat.JPG,
-          CloudinaryImageDensity.TRIPLE,
-          undefined,
-          256
-        )} 3x`;
+    cloudinaryImageName,
+    CloudinaryImageFormat.JPG,
+    CloudinaryImageDensity.TRIPLE,
+    undefined,
+    256
+  )} 3x`;
 
   return (
     <header className="h-96 flex-none basis-full rounded-xl px-2 sm:basis-1/2 lg:basis-1/3 2xl:basis-1/4">
       <div className="flex flex-col">
         <picture>
+          <source type="image/avif" srcSet={avifSrcSet}></source>
           <source type="image/webp" srcSet={webpSrcSet}></source>
           <source type="image/jpg" srcSet={jpgSrcSet}></source>
           <img

@@ -7,6 +7,7 @@ export enum CloudinaryImageDensity {
 export enum CloudinaryImageFormat {
   JPG = "jpg",
   WEBP = "webp",
+  AVIF = "avif"
 }
 
 export class CloudinaryImageRequestHelper {
