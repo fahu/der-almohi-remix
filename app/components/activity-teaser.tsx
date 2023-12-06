@@ -69,9 +69,13 @@ export const ActivityTeaserComponent = ({
             src={CloudinaryImageRequestHelper.getImageUrl(
               cloudinaryImageName,
               CloudinaryImageFormat.JPG,
-              CloudinaryImageDensity.SINGLE
+              CloudinaryImageDensity.SINGLE,
+              undefined,
+              256
             )}
+            srcSet={jpgSrcSet}
             alt={altText}
+            loading="lazy"
             height="256"
           />
         <div className="prose mt-4">
